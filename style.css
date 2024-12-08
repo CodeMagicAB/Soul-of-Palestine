@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    direction: rtl;
+}
+/* Head */
+nav {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 88px;
+    box-shadow: black 0px 0px 19px -9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0;
+}
+
+.itemNav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.right {
+    background-color: #000000;
+    height: 91px;
+    width: 20px;
+    margin-left: 21px;
+}
+.tophead{
+    background-color: #000000;
+    height: 30px;
+    width: 100%;
+}
+#date{
+    padding: 5px 19px;
+    color: white;
+}
+.logo img {
+    width: 46px;
+    height: 60px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.linkNav {
+    display: flex;
+    list-style: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.linkNav li {
+    padding: 33px;
+    font-size: 18px;
+    font-optical-sizing: auto;
+    transition: 0.3s linear;
+}
+
+.linkNav li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.linkNav .hoverli:hover {
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.linkNav .hoverli:hover a {
+    color: white;
+    cursor: pointer;
+}
+/* Head */
+/* container */
+.container{
+    width: 90%;
+    height: 2000px;
+    margin: auto;
+    display: flex;
+}
+h1{
+    padding: 32px;
+}
+
+.container .rightNews{
+    width: 75%;
+    height: 100%;
+
+}
+.container .leftNews {
+    width: 25%;
+    height: 100%;
+
+}
+
+.news img{
+    width: 100%;
+    border-radius: 8px;
+}
+.news {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.news:hover{
+    transform: scale(0.9);
+    cursor: pointer;
+}
+.news h2{
+    padding: 20px;
+}
+.news p {
+    padding: 10px 15px;
+    line-height: 1.6;
+}
+.news .timedate{
+    font-size: 14px;
+    padding: 20px;
+    color: rgb(106, 106, 106);
+}
+.links ul{
+    list-style: none;
+    margin: 30px;
+    top: 0;
+    position: sticky;
+    overflow: scroll;
+}
+.links ul li{
+    padding: 10px;
+    width: 100%;
+    transition: 0.3s linear;
+}
+.links ul li:hover{
+    background-color: black;
+    cursor: pointer;
+}
+.links ul li:hover a{
+    color:white;
+    padding-right: 20px;
+}
+.links ul li a{
+    text-decoration: none;
+    color: #000000;
+}
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        flex-direction: column;
+    z-index: 9999;
+}
+
+/* دائرة التحميل */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+#preloader img{
+    width: 154px;
+    height: 302px;
+}
+/* #preloader h3{
+    padding: 30px;
+    text-align: center;
+    font-family: 'Amiri', serif;
+} */
+/* تأثير الدوران */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* container */
+@media (max-width: 768px) {
+    /* Head */
+    .linkNav {
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        display: none;
+        position: absolute;
+        top: 120px;
+        left: 0;
+        z-index: 10;
+    }
+
+    .linkNav.active {
+        display: flex;
+    }
+    .right{
+        visibility: hidden;
+    }
+    .hoverli {
+        display: block;
+    }
+    .linkNav li {
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    nav {
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .logo img {
+        margin: 10px auto;
+    }
+    /* Head */
+    h1{
+        text-align: center;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .container .leftNews {
+        width: 100%;
+    }
+    .container .rightNews{
+        width: 100%;
+    }
+}

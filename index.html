@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="موقع شامل ومتنوع يقدم تغطية متميزة لكل ما يتعلق بفلسطين من أخبار سياسية واجتماعية، إضافة إلى تقارير عن قضايا حقوق الإنسان، وتأثير الاحتلال، والفعاليات الثقافية. يهتم الموقع بعلاقات فلسطين الإقليمية والدولية، ويبرز الأوضاع المعيشية اليومية، بما في ذلك تقارير عن غزة والضفة الغربية. يقدم محتوى دقيقًا ومحدثًا باستمرار لتلبية احتياجات القراء المهتمين بالشأن الفلسطيني.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+
+</head>
+<body dir="rtl">
+        <div id="preloader">
+            <img src="img/images-removebg-preview.png" alt="">
+            <!-- <h3>أَلَا إِنَّ نَصْرَ اللَّهِ قَرِيبٌ</h3> -->
+        </div>
+    <header>
+        <div class="tophead">
+            <p id="date"></p>
+        </div>
+            <nav>
+                <div class="itemNav">
+                    <div class="right"></div>
+                    <a href="#" class="logo"><img src="img/images-removebg-preview.png" alt=""></a>
+                    <ul class="linkNav">
+                        <li class="hoverli"><a href="">الرئيسية</a></li>
+                        <li class="hoverli"><a href="">كتائب القسام</a></li>
+                        <li class="hoverli"><a href="">الخريطة</a></li>
+                    </ul>
+                </div>
+            </nav>
+    </header>
+<!-- ----- -->
+<h1>الواقع الفلسطيني</h1>
+<div class="container">
+        <div class="rightNews">
+            <!-- اضافة خبر -->
+            <div class="news">
+                <h2>وفد من حماس يتوجه إلى القاهرة لبحث وقف إطلاق النار في غزة</h2>
+                <img src="img/000_36NK7ZZ.webp" alt="">
+                <p>أكد باسم نعيم، القيادي في حماس، أن وفدا من الحركة سيصل إلى القاهرة السبت، لإجراء محادثات مع مسؤوليين مصريين. ويأتي ذلك
+                بعد أيام من إعلان الولايات المتحدة بدء جهود وساطة جديدة بمعية قطر ومصر وتركيا من أجل التوصل لوقف إطلاق النار في غزة.
+                فيما شدد الأمين العام لحزب الله نعيم قاسم الجمعة، على جاهزية الحزب للتعاون مع الجيش اللبناني لـ"تعزيز قدرة لبنان
+                الدفاعية"، وذلك تزامنا مع بدء انتشار القوات المسلحة في جنوب البلاد عقب دخول اتفاق وقف إطلاق النار بين التنظيم الشيعي
+                وإسرائيل حيز التنفيذ.</p>
+                <p class="timedate" align="left"> <i class="fa-solid fa-calendar-days"></i>الخميس، ٥ ديسمبر ٢٠٢٤</p>
+            </div>
+            <!-- اضافة خبر -->
+            <!-- اضافة خبر -->
+            <div class="news">
+                <h2>وفد من حماس يتوجه إلى القاهرة لبحث وقف إطلاق النار في غزة</h2>
+                <img src="img/000_36NK7ZZ.webp" alt="">
+                <p>أكد باسم نعيم، القيادي في حماس، أن وفدا من الحركة سيصل إلى القاهرة السبت، لإجراء محادثات مع مسؤوليين مصريين. ويأتي ذلك
+                بعد أيام من إعلان الولايات المتحدة بدء جهود وساطة جديدة بمعية قطر ومصر وتركيا من أجل التوصل لوقف إطلاق النار في غزة.
+                فيما شدد الأمين العام لحزب الله نعيم قاسم الجمعة، على جاهزية الحزب للتعاون مع الجيش اللبناني لـ"تعزيز قدرة لبنان
+                الدفاعية"، وذلك تزامنا مع بدء انتشار القوات المسلحة في جنوب البلاد عقب دخول اتفاق وقف إطلاق النار بين التنظيم الشيعي
+                وإسرائيل حيز التنفيذ.</p>
+                <p class="timedate" align="left"> <i class="fa-solid fa-calendar-days"></i>الخميس، ٥ ديسمبر ٢٠٢٤</p>
+            </div>
+            <!-- اضافة خبر -->
+        </div>
+
+        <div class="leftNews">
+            <!-- اضافة خبر -->
+            
+            <!-- اضافة خبر -->
+        </div>
+
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const logo = document.querySelector(".logo");
+        const navLinks = document.querySelector(".linkNav");
+
+        logo.addEventListener("click", function (e) {
+            e.preventDefault(); // لمنع إعادة تحميل الصفحة
+            navLinks.classList.toggle("active"); // تبديل كلاس active لإظهار أو إخفاء القائمة
+        });
+    });
+    function updateDate() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+            };
+            const formattedDate = now.toLocaleDateString('ar-EG', options);
+            document.getElementById('date').textContent = formattedDate;
+        }
+
+        // عرض التاريخ عند تحميل الصفحة
+        updateDate();
+    window.addEventListener("load", () => {
+        // جعل التحميل يستمر لمدة دقيقة
+        setTimeout(() => {
+            // إخفاء شاشة التحميل
+            const preloader = document.getElementById("preloader");
+            preloader.style.opacity = "0";
+            preloader.style.transition = "opacity 0.5s ease";
+
+            // إزالة العنصر بعد انتهاء التأثير
+            setTimeout(() => {
+                preloader.style.display = "none";
+            }, 500); // نصف ثانية
+        }, 4000); // دقيقة واحدة (60000 ملي ثانية)
+    });
+
+        
+</script>
+
+
+</body>
+</html>
