@@ -90,7 +90,7 @@ header{
 /* container */
 .container{
     width: 90%;
-    height: 2000px;
+    height: auto;
     margin: auto;
     display: flex;
 }
@@ -299,10 +299,10 @@ video{
 .cardQassam{
     /* border: #000000 solid 1px; */
     height: 480px;
-    width: 300px;
+    width: 280px;
     border-radius: 25px 25px 10px 10px;
     box-shadow: 0 0 10px -3px black;
-    margin: 20px;
+    margin: 20px 10px;
 }
 .imageQassam{
     width: 100%;
@@ -316,7 +316,7 @@ video{
 }
 .fourcardQassam{
     display: flex;
-    margin: 20px 60px;
+    margin: 20px auto;
 }
 /* footer */
 @media (max-width: 768px) {
@@ -390,6 +390,10 @@ video{
     .social-links li{
         margin: 0;
     }
+    .fourcardQassam{
+        flex-direction: column;
+        margin: 0 auto;
+    } 
 }
 
 

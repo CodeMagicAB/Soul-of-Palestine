@@ -90,7 +90,7 @@ header{
 /* container */
 .container{
     width: 90%;
-    height: 2000px;
+    height: auto;
     margin: auto;
     display: flex;
 }
