@@ -93,6 +93,7 @@ header{
     height: auto;
     margin: auto;
     display: flex;
+    flex-direction: column;
 }
 h1{
     padding: 32px;
