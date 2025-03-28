@@ -40,33 +40,7 @@
 <img src="img/Cover.jpg" alt="" width="100%" style="margin: auto;" class="Cover">
 <h2>احدث الاخبار</h2>
 <div class="container">
-        <div class="rightNews">
-            <!-- اضافة خبر -->
-            <div class="news">
-                <h2>وفد من حماس يتوجه إلى القاهرة لبحث وقف إطلاق النار في غزة</h2>
-                <img src="img/000_36NK7ZZ.webp" alt="">
-                <p>أكد باسم نعيم، القيادي في حماس، أن وفدا من الحركة سيصل إلى القاهرة السبت، لإجراء محادثات مع مسؤوليين مصريين. ويأتي ذلك
-                بعد أيام من إعلان الولايات المتحدة بدء جهود وساطة جديدة بمعية قطر ومصر وتركيا من أجل التوصل لوقف إطلاق النار في غزة.
-                فيما شدد الأمين العام لحزب الله نعيم قاسم الجمعة، على جاهزية الحزب للتعاون مع الجيش اللبناني لـ"تعزيز قدرة لبنان
-                الدفاعية"، وذلك تزامنا مع بدء انتشار القوات المسلحة في جنوب البلاد عقب دخول اتفاق وقف إطلاق النار بين التنظيم الشيعي
-                وإسرائيل حيز التنفيذ.</p>
-                <p class="timedate" align="left"> <i class="fa-solid fa-calendar-days"></i>الخميس، ٥ ديسمبر ٢٠٢٤</p>
-            </div>
-            <!-- اضافة خبر -->
-
-            <!-- اضافة خبر -->
-            <div class="news">
-                <h2>وفد من حماس يتوجه إلى القاهرة لبحث وقف إطلاق النار في غزة</h2>
-                <img src="img/000_36NK7ZZ.webp" alt="">
-                <p>أكد باسم نعيم، القيادي في حماس، أن وفدا من الحركة سيصل إلى القاهرة السبت، لإجراء محادثات مع مسؤوليين مصريين. ويأتي ذلك
-                بعد أيام من إعلان الولايات المتحدة بدء جهود وساطة جديدة بمعية قطر ومصر وتركيا من أجل التوصل لوقف إطلاق النار في غزة.
-                فيما شدد الأمين العام لحزب الله نعيم قاسم الجمعة، على جاهزية الحزب للتعاون مع الجيش اللبناني لـ"تعزيز قدرة لبنان
-                الدفاعية"، وذلك تزامنا مع بدء انتشار القوات المسلحة في جنوب البلاد عقب دخول اتفاق وقف إطلاق النار بين التنظيم الشيعي
-                وإسرائيل حيز التنفيذ.</p>
-                <p class="timedate" align="left"> <i class="fa-solid fa-calendar-days"></i>الخميس، ٥ ديسمبر ٢٠٢٤</p>
-            </div>
-            <!-- اضافة خبر -->
-        </div>
+        <div class="rightNews"></div>
 
         <div class="leftNews">
             <!-- اضافة خبر -->
@@ -76,7 +50,7 @@
                 <source src="Video/document_5960747993563928393.mp4" type="video/ogg">
                 Your browser does not support the video tag.
             </video>
-            <p>سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء مدينة خانيونس.</p>
+            <p >سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء مدينة خانيونس.</p>
         </div>
         <div class="vid">
             <video controls>
@@ -84,7 +58,7 @@
                 <source src="Video/document_5960747993563928393.mp4" type="video/ogg">
                 Your browser does not support the video tag.
             </video>
-            <p>سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء مدينة خانيونس.</p>
+            <p >سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء مدينة خانيونس.</p>
         </div>
             <!-- اضافة خبر -->
         </div>
@@ -99,7 +73,7 @@
                 <h4>Developers:</h4>
                 <ul>
                     <li><a href="https://api.whatsapp.com/send?phone=+201092267949&amp;text=Hello"
-                            target="_blank">3bdelrahman ramadan <i class="fa-solid fa-code"></i></a></li>
+                            target="_blank"><span style="color: red;">3bdelrahman ramadan <i class="fa-solid fa-code"></i></a></span></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -145,6 +119,52 @@
     </div>
 </footer>
 <!-- footer -->
+ <script>
+    async function fetchData() {
+            const sheetID = "1tLIF30y3g89vhL1l_HpNzwvARCMZJ67Cg8x9QKLbumg";
+            const apiKey = "AIzaSyDe7E4wgMCn8aWhcc8dbcNkccGHDmoemGI";
+            const range = "SheetNews!A1:L100";
+
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`;
+
+            try {
+                // console.log("طلب البيانات من:", url);
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error(`فشل في جلب البيانات: ${response.status} - ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                // console.log("البيانات المستلمة:", data);
+
+                if (!data.values || data.values.length === 0) {
+                    throw new Error("لم يتم العثور على بيانات في Google Sheets.");
+                }
+
+                let content = "";
+                data.values.forEach((row) => {
+                    if (row.length >= 12) {
+                    content += `<div class="news">
+                    <h2>${row[1] || "غير متوفر"}</h2>
+                    <img src="data:image/png;base64,${(row[2] || '') + (row[3] || '') + (row[4] || '') + (row[5] || '') + (row[6] || '') + (row[7] || '') + (row[8] || '') + (row[9] || '')}" alt="صورة 1">
+                    <p>${row[10] || "غير متوفر"}</p>
+                    <p class="timedate" align="left">${row[11] || "غير متوفر"} <i class="fa-solid fa-calendar-days"></i></p>
+                </div>`;
+                    }
+                });
+
+                document.querySelector(".rightNews").innerHTML = content;
+            } catch (error) {
+                console.error("حدث خطأ:", error);
+            }
+        }
+
+        // استدعاء الدالة عند تحميل الصفحة
+        fetchData();
+
+
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const logo = document.querySelector(".logo");
