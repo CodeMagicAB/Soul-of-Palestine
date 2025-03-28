@@ -5,7 +5,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: "Rubik", sans-serif;
     direction: rtl;
@@ -19,8 +18,10 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 0;
+    /* padding: 10px 20px; */
+    box-sizing: border-box;
 }
+
 .active{
     background-color: #000000;
 }
@@ -187,6 +188,52 @@ video{
     border-top: 5px solid #3498db;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+}
+/* الحاوية الرئيسية للكروت */
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px 0;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.177);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    padding-bottom: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* العنوان والنص */
+.card h3 {
+    margin: 10px 0;
+    font-size: 16px;
+    color: red;
+    padding: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    padding: 0 10px;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 800px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 #preloader img{
     width: 154px;
@@ -397,10 +444,15 @@ video{
     .social-links li{
         margin: 0;
     }
-    .fourcardQassam{
-        flex-direction: column;
-        margin: 0px -7px;
-    } 
+        .fourcardQassam {
+            flex-direction: column;
+            align-items: center;
+            /* يجعل الكروت في المنتصف */
+            justify-content: center;
+            /* يضمن المحاذاة الصحيحة */
+            margin: auto;
+        }
+
 }
 
 
