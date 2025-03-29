@@ -332,4 +332,7 @@ h2{
                     height: 38px;
                     font-size: 10px;
                 }
+                .list{
+                    width: 100%;
+                }
         }
