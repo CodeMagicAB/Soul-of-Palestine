@@ -12,115 +12,241 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
     <link rel="icon" href="img/images-removebg-preview.png">
 </head>
-<body dir="rtl">
-        <div id="preloader">
-            <img src="img/images-removebg-preview.png" alt="">
-            <!-- <h3>أَلَا إِنَّ نَصْرَ اللَّهِ قَرِيبٌ</h3> -->
-        </div>
+<body>
+    <div id="preloader">
+        <img src="img/images-removebg-preview.png" alt="" id="loadPhoto">
+        <!-- <h3>أَلَا إِنَّ نَصْرَ اللَّهِ قَرِيبٌ</h3> -->
+    </div>
     <header>
         <div class="tophead">
             <p id="date"></p>
         </div>
-            <nav>
-                <div class="itemNav">
-                    <div class="right"></div>
-                    <a href="#" class="logo"><img src="img/images-removebg-preview.png" alt=""></a>
-                    <ul class="linkNav">
-                        <li class="hoverli active"><a href="" style="color: white;">الرئيسية</a></li>
-                        <li class="hoverli"><a href="Qassam/Qassam.html">كتائب القسام</a></li>
-                        <li class="hoverli"><a href="boycott/index.html">منتجات المقاطعة</a></li>
-                <li class="hoverli"><a href="Kill/Kill.html">الضحايا</a></li>
-                    </ul>
+        <nav>
+            <div class="itemNav">
+                <div class="logo-text">
+                    <a href="#" class="logo"><img src="img/images-removebg-preview.png" alt="Logo" id="logoimg"></a>
+                    <div class="f">
+                        <h1>فلسطين إلى الأبد</h1>
+                        <p>Palestine Forever</p>
+                    </div>
                 </div>
-            </nav>
+                <button id="toggleDarkMode"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                <button id="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="miniNav">
+                <hr style="width: 90%; margin: auto;">
+                <ul class="linkNav">
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">الأخبار</a></li>
+                    <li><a href="#">المقاومة الفلسطينية</a></li>
+                    <li><a href="#">منتجات المقاطعة</a></li>
+                    <li><a href="#">الشهداء والضحايا</a></li>
+                    <li><a href="#">شخصيات هامة</a></li>
+                    <li><a href="#">دعم غزة</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
-<!-- ----- -->
-<!-- ----- -->
-<h1>الواقع الفلسطيني</h1>
-<img src="img/Cover.jpg" alt="" width="100%" style="margin: auto;" class="Cover">
-<h2>احدث الاخبار</h2>
-<div class="container">
+
+    <!-- القائمة الجانبية -->
+    <aside id="sidebar">
+        <button id="close-menu"><i class="fa-solid fa-times"></i></button>
+        <ul>
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">الأخبار</a></li>
+            <li><a href="#">المقاومة الفلسطينية</a></li>
+            <li><a href="#">منتجات المقاطعة</a></li>
+            <li><a href="#">الشهداء والضحايا</a></li>
+            <li><a href="#">شخصيات هامة</a></li>
+            <li><a href="#">دعم غزة</a></li>
+        </ul>
+    </aside>
+
+
+    <h1 class="hMain">الواقع الفلسطيني</h1>
+    <img src="../img/Cover.jpg" alt="" width="100%" style="margin: auto;" class="Cover">
+    <h2>احدث الاخبار</h2>
+    <div class="container">
         <div class="rightNews"></div>
 
         <div class="leftNews">
             <!-- اضافة خبر -->
-        <div class="vid">
-            <video controls>
-                <source src="Video/document_5960747993563928393.mp4" type="video/mp4">
-                <source src="Video/document_5960747993563928393.mp4" type="video/ogg">
-                Your browser does not support the video tag.
-            </video>
-            <p >سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء مدينة خانيونس.</p>
-        </div>
-        <div class="vid">
-            <video controls>
-                <source src="Video/document_5960747993563928393.mp4" type="video/mp4">
-                <source src="Video/document_5960747993563928393.mp4" type="video/ogg">
-                Your browser does not support the video tag.
-            </video>
-            <p >سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء مدينة خانيونس.</p>
-        </div>
+            <div class="vid">
+                <video controls>
+                    <source src="Video/document_5960747993563928393.mp4" type="video/mp4">
+                    <source src="Video/document_5960747993563928393.mp4" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <p>سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء
+                    مدينة
+                    خانيونس.</p>
+            </div>
+            <div class="vid">
+                <video controls>
+                    <source src="Video/document_5960747993563928393.mp4" type="video/mp4">
+                    <source src="Video/document_5960747993563928393.mp4" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <p>سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء
+                    مدينة
+                    خانيونس.</p>
+            </div>
             <!-- اضافة خبر -->
         </div>
-        
 
-</div>
-<!-- footer -->
-<footer class="footer" id="About" dir="ltr">
-    <div class="footer-container">
-        <div class="footer-row">
-            <div class="footer-column">
-                <h4>Developers:</h4>
-                <ul>
-                    <li><a href="https://api.whatsapp.com/send?phone=+201092267949&amp;text=Hello"
-                            target="_blank"><span style="color: red;">3bdelrahman ramadan <i class="fa-solid fa-code"></i></a></span></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>3bdelrahman ramadan</h4>
-                <ul>
-                    <li><a href="https://www.facebook.com/profile.php?id=100012312460534"
-                            target="_blank"><i class="fa-brands fa-facebook"></i>
-                            Facebook</a></li>
-                    <li><a href="https://www.instagram.com/_abdel_ra7man_/"
-                            target="_blank"><i class="fa-brands fa-instagram"></i>
-                            Instagram</a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=+201092267949&amp;text=Hello" target="_blank"><i
-                                class="fa-brands fa-whatsapp"></i>
-                            whatsapp</a></li>
-                </ul>
-            </div>
-            <br>
-            <div class="footer-column">
-                <h4>3bdelrahman ramadan</h4>
-                <ul>
-                    <li><a href="https://www.facebook.com/profile.php?id=100012312460534"
-                            target="_blank"><i class="fa-brands fa-facebook"></i>
-                            Facebook</a></li>
-                    <li><a href="https://www.instagram.com/_abdel_ra7man_/"
-                            target="_blank"><i class="fa-brands fa-instagram"></i>
-                            Instagram</a></li>
-                    <li><a href="https://api.whatsapp.com/send?phone=+201092267949&amp;text=Hello" target="_blank"><i
-                                class="fa-brands fa-whatsapp"></i>
-                            whatsapp</a></li>
-                </ul>
-            </div>
 
-            <div class="footer-column">
-                <!-- <h4>Follow <br>ZStore Eg</h4> -->
-                <ul class="social-links">
-                    <li><img src="img/Untitled-1-removebg-preview (1).png"></li>
-                </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer -->
+    <footer class="footer" id="About" dir="ltr">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-column">
+                    <h4>Developers:</h4>
+                    <ul>
+                        <li><a href="https://api.whatsapp.com/send?phone=+201092267949&amp;text=Hello" target="_blank">
+                                3bdelrahman ramadan <i class="fa-solid fa-code"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>3bdelrahman ramadan</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/profile.php?id=100012312460534" target="_blank"><i
+                                    class="fa-brands fa-facebook"></i>
+                                Facebook</a></li>
+                        <li><a href="https://www.instagram.com/_abdel_ra7man_/" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i>
+                                Instagram</a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=+201092267949&amp;text=Hello"
+                                target="_blank"><i class="fa-brands fa-whatsapp"></i>
+                                whatsapp</a></li>
+                    </ul>
+                </div>
+                <br>
+                <div class="footer-column">
+                    <h4>3bdelrahman ramadan</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/profile.php?id=100012312460534" target="_blank"><i
+                                    class="fa-brands fa-facebook"></i>
+                                Facebook</a></li>
+                        <li><a href="https://www.instagram.com/_abdel_ra7man_/" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i>
+                                Instagram</a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=+201092267949&amp;text=Hello"
+                                target="_blank"><i class="fa-brands fa-whatsapp"></i>
+                                whatsapp</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <!-- <h4>Follow <br>ZStore Eg</h4> -->
+                    <ul class="social-links">
+                        <li><img src="img/images-removebg-preview.png" id="logoFooter"></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025  <span style="color: red;">فلسطين</span> إلى الأبد | Palestine Forever.</p>
-    </div>
-</footer>
-<!-- footer -->
- <script>
-    async function fetchData() {
+        <div class="footer-bottom">
+            <p>&copy; 2025 فلسطين إلى الأبد | Palestine Forever.</p>
+        </div>
+    </footer>
+    <!-- footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+                const toggleButton = document.getElementById("toggleDarkMode");
+                const body = document.body;
+                const logo = document.getElementById("logoimg");
+                const logoFooter = document.getElementById("logoFooter");
+                const loadPhoto = document.getElementById("loadPhoto");
+
+                // دالة لتغيير جميع الصور
+                function changeImages(src) {
+                    if (logo) logo.src = src;
+                    if (logoFooter) logoFooter.src = src;
+                    if (loadPhoto) loadPhoto.src = src;
+                }
+
+                // تعيين الصور عند تحميل الصفحة
+                if (localStorage.getItem("dark-mode") === "enabled") {
+                    body.classList.add("dark-mode");
+                    changeImages("img/images-removebg-preview1.png");
+                } else {
+                    body.classList.remove("dark-mode");
+                    changeImages("img/images-removebg-preview.png");
+                }
+
+                // عند النقر على زر الوضع الليلي
+                toggleButton.addEventListener("click", () => {
+                    body.classList.toggle("dark-mode");
+
+                    if (body.classList.contains("dark-mode")) {
+                        changeImages("img/images-removebg-preview1.png");
+                        localStorage.setItem("dark-mode", "enabled");
+                    } else {
+                        changeImages("img/images-removebg-preview.png");
+                        localStorage.setItem("dark-mode", "disabled");
+                    }
+                });
+            });
+
+
+
+
+
+
+
+
+
+
+
+        async function fetchData() {
             const sheetID = "1tLIF30y3g89vhL1l_HpNzwvARCMZJ67Cg8x9QKLbumg";
             const apiKey = "AIzaSyDe7E4wgMCn8aWhcc8dbcNkccGHDmoemGI";
             const range = "SheetNews!A2:L100";
@@ -145,7 +271,7 @@
                 let content = "";
                 data.values.forEach((row) => {
                     if (row.length >= 12) {
-                    content += `<div class="news">
+                        content += `<div class="news">
                     <h2>${row[1] || "غير متوفر"}</h2>
                     <img src="data:image/png;base64,${(row[2] || '') + (row[3] || '') + (row[4] || '') + (row[5] || '') + (row[6] || '') + (row[7] || '') + (row[8] || '') + (row[9] || '')}" alt="صورة 1">
                     <p>${row[10] || "غير متوفر"}</p>
@@ -163,55 +289,22 @@
         // استدعاء الدالة عند تحميل الصفحة
         fetchData();
 
-
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const logo = document.querySelector(".logo");
-        const navLinks = document.querySelector(".linkNav");
-
-        logo.addEventListener("click", function (e) {
-            e.preventDefault(); // لمنع إعادة تحميل الصفحة
-            navLinks.classList.toggle("active"); // تبديل كلاس active لإظهار أو إخفاء القائمة
-        });
-    });
-    function updateDate() {
-            const now = new Date();
-            const options = {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-            };
-            const formattedDate = now.toLocaleDateString('ar-EG', options);
-            document.getElementById('date').textContent = formattedDate;
-        }
-
-        // عرض التاريخ عند تحميل الصفحة
-        updateDate();
-    window.addEventListener("load", () => {
-        // جعل التحميل يستمر لمدة دقيقة
-        setTimeout(() => {
-            // إخفاء شاشة التحميل
-            const preloader = document.getElementById("preloader");
-            preloader.style.opacity = "0";
-            preloader.style.transition = "opacity 0.5s ease";
-
-            // إزالة العنصر بعد انتهاء التأثير
+        window.addEventListener("load", () => {
+            // جعل التحميل يستمر لمدة دقيقة
             setTimeout(() => {
-                preloader.style.display = "none";
-            }, 500); // نصف ثانية
-        }, 4000); // دقيقة واحدة (60000 ملي ثانية)
-    });
+                // إخفاء شاشة التحميل
+                const preloader = document.getElementById("preloader");
+                preloader.style.opacity = "0";
+                preloader.style.transition = "opacity 0.5s ease";
 
+                // إزالة العنصر بعد انتهاء التأثير
+                setTimeout(() => {
+                    preloader.style.display = "none";
+                }, 500); // نصف ثانية
+            }, 4000); // دقيقة واحدة (60000 ملي ثانية)
+        });
 
-
-
-
-    
-        
-</script>
-
-
+    </script>
 </body>
+
 </html>
