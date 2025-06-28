@@ -14,7 +14,7 @@
 </head>
 <body>
     <div id="preloader">
-        <img src="img/images-removebg-preview.png" alt="" id="loadPhoto">
+        <!-- <img src="img/images-removebg-preview.png" alt="" id="loadPhoto"> -->
         <!-- <h3>أَلَا إِنَّ نَصْرَ اللَّهِ قَرِيبٌ</h3> -->
     </div>
     <header>
@@ -63,55 +63,39 @@
     </aside>
 
 
-    <h1 class="hMain">الواقع الفلسطيني</h1>
-    <img src="../img/Cover.jpg" alt="" width="100%" style="margin: auto;" class="Cover">
-    <h2>احدث الاخبار</h2>
-    <div class="container">
-        <div class="rightNews"></div>
-
-        <div class="leftNews">
-            <!-- اضافة خبر -->
-            <div class="vid">
-                <video controls>
-                    <source src="Video/document_5960747993563928393.mp4" type="video/mp4">
-                    <source src="Video/document_5960747993563928393.mp4" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
-                <p>سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء
-                    مدينة
-                    خانيونس.</p>
+        
+            <div class="arrows" style="display: none;">
+                <button class="arrow" id="prev">&#10094;</button>
+                <button class="arrow" id="next">&#10095;</button>
             </div>
-            <div class="vid">
-                <video controls>
-                    <source src="Video/document_5960747993563928393.mp4" type="video/mp4">
-                    <source src="Video/document_5960747993563928393.mp4" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
-                <p>سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء
-                    مدينة
-                    خانيونس.</p>
-            </div>
-            <!-- اضافة خبر -->
-        </div>
-
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <h3>اخبار من داخل قطاع غزة</h3>
+    <div class="container">
+        <div class="main">
+            <div class="right">
+                <div class="contnt">
+                        <div class="ra1" >
+                            <!-- <div class="card">
+                                <div class="card-body">
+                                    <img src="img/000_36NK7ZZ.webp" alt="">
+                                    <h2>الخبر</h2>
+                                    <p>روبيو يعلن موعد إجراء محادثات "مباشرة" بين واشنطن وطهران</p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    </div>
+                    <div class="left">
+                        <h3>بعض جهات التبرع الي غزة</h3>
+                        <ul id="ullist">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 
 
 
@@ -154,14 +138,10 @@
                 </div>
                 <br>
                 <div class="footer-column">
-                    <h4>3bdelrahman ramadan</h4>
+                    <h4>الاشتراك في خدمة الاخبار اليومية</h4>
                     <ul>
-                        <li><a href="https://www.facebook.com/profile.php?id=100012312460534" target="_blank"><i
-                                    class="fa-brands fa-facebook"></i>
-                                Facebook</a></li>
-                        <li><a href="https://www.instagram.com/_abdel_ra7man_/" target="_blank"><i
-                                    class="fa-brands fa-instagram"></i>
-                                Instagram</a></li>
+                        <li><input type="" name="" id=""></li>
+                        <li><button>الاشتراك</button></li>
                         <li><a href="https://api.whatsapp.com/send?phone=+201092267949&amp;text=Hello"
                                 target="_blank"><i class="fa-brands fa-whatsapp"></i>
                                 whatsapp</a></li>
@@ -238,56 +218,31 @@
 
 
 
+    const slides = document.getElementById('slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+        let index = 0;
 
-
-
-
-
-
-
-
-        async function fetchData() {
-            const sheetID = "1tLIF30y3g89vhL1l_HpNzwvARCMZJ67Cg8x9QKLbumg";
-            const apiKey = "AIzaSyDe7E4wgMCn8aWhcc8dbcNkccGHDmoemGI";
-            const range = "SheetNews!A2:L100";
-
-            const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`;
-
-            try {
-                // console.log("طلب البيانات من:", url);
-                const response = await fetch(url);
-
-                if (!response.ok) {
-                    throw new Error(`فشل في جلب البيانات: ${response.status} - ${response.statusText}`);
-                }
-
-                const data = await response.json();
-                // console.log("البيانات المستلمة:", data);
-
-                if (!data.values || data.values.length === 0) {
-                    throw new Error("لم يتم العثور على بيانات في Google Sheets.");
-                }
-
-                let content = "";
-                data.values.forEach((row) => {
-                    if (row.length >= 12) {
-                        content += `<div class="news">
-                    <h2>${row[1] || "غير متوفر"}</h2>
-                    <img src="data:image/png;base64,${(row[2] || '') + (row[3] || '') + (row[4] || '') + (row[5] || '') + (row[6] || '') + (row[7] || '') + (row[8] || '') + (row[9] || '')}" alt="صورة 1">
-                    <p>${row[10] || "غير متوفر"}</p>
-                    <p class="timedate" align="left">${row[11] || "غير متوفر"} <i class="fa-solid fa-calendar-days"></i></p>
-                </div>`;
-                    }
-                });
-
-                document.querySelector(".rightNews").innerHTML = content;
-            } catch (error) {
-                console.error("حدث خطأ:", error);
-            }
+        function showSlide(i) {
+            slides.style.transform = `translateX(-${i * 100}%)`;
         }
 
-        // استدعاء الدالة عند تحميل الصفحة
-        fetchData();
+        function nextSlide() {
+            index = (index + 1) % totalSlides;
+            showSlide(index);
+        }
+
+        function prevSlide() {
+            index = (index - 1 + totalSlides) % totalSlides;
+            showSlide(index);
+        }
+
+        document.getElementById('next').onclick = nextSlide;
+        document.getElementById('prev').onclick = prevSlide;
+
+        // setInterval(nextSlide, 6000); // يتحرك تلقائياً كل 3 ثواني
+
+
+
 
         window.addEventListener("load", () => {
             // جعل التحميل يستمر لمدة دقيقة
@@ -304,7 +259,192 @@
             }, 4000); // دقيقة واحدة (60000 ملي ثانية)
         });
 
+
+
+
+
+
+
+
+
+
+
+
+
+       async function fetchData() {
+            const sheetID = "1tLIF30y3g89vhL1l_HpNzwvARCMZJ67Cg8x9QKLbumg";
+            const apiKey = "AIzaSyDe7E4wgMCn8aWhcc8dbcNkccGHDmoemGI";
+            const range = "SheetDonations!A2:D100";
+
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`;
+
+            try {
+                console.log("طلب البيانات من:", url);
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error(`فشل في جلب البيانات: ${response.status} - ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                console.log("البيانات المستلمة:", data);
+
+                if (!data.values || data.values.length === 0) {
+                    throw new Error("لم يتم العثور على بيانات في Google Sheets.");
+                }
+
+                let content = "";
+                data.values.forEach((row) => {
+                    content += `<li><a href="${row[3] || 'غير متوفر'}">${row[2] || 'غير متوفر'}</a></li>`;
+                });
+
+                document.getElementById("ullist").innerHTML = content;
+            } catch (error) {
+                console.error("حدث خطأ:", error);
+            }
+        }
+
+        // استدعاء الدالة عند تحميل الصفحة
+        fetchData();
+
+
+
+
+
+
+            document.addEventListener("DOMContentLoaded", function () {
+                    const menuToggle = document.getElementById("menu-toggle");
+                    const closeMenu = document.getElementById("close-menu");
+                    const sidebar = document.getElementById("sidebar");
+
+                    menuToggle.addEventListener("click", () => {
+                        sidebar.classList.add("active");
+                    });
+
+                    closeMenu.addEventListener("click", () => {
+                        sidebar.classList.remove("active");
+                    });
+                });
     </script>
+    <script>
+        async function fetchData() {
+                const sheetID = "1tLIF30y3g89vhL1l_HpNzwvARCMZJ67Cg8x9QKLbumg";
+                const apiKey = "AIzaSyDe7E4wgMCn8aWhcc8dbcNkccGHDmoemGI";
+                const range = "SheetNews!A2:L100";
+
+                const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`;
+
+                try {
+                    // console.log("طلب البيانات من:", url);
+                    const response = await fetch(url);
+
+                    if (!response.ok) {
+                        throw new Error(`فشل في جلب البيانات: ${response.status} - ${response.statusText}`);
+                    }
+
+                    const data = await response.json();
+                    // console.log("البيانات المستلمة:", data);
+
+                    if (!data.values || data.values.length === 0) {
+                        throw new Error("لم يتم العثور على بيانات في Google Sheets.");
+                    }
+
+                    let content = "";
+                    data.values.forEach((row) => {
+                        if (row.length >= 12) {
+                            content += `<div class="card">
+                                <div class="card-body">
+                                    <img src="data:image/png;base64,${(row[2] || '') + (row[3] || '') + (row[4] || '') + (row[5] || '') + (row[6] || '') + (row[7] || '') + (row[8] || '') + (row[9] || '')}" alt="صورة 1">
+                                    <h2>${row[1] || "غير متوفر"}</h2>
+                                    <p>${row[10] || "غير متوفر"}</p>
+                                    <p class="timedate" align="left">${row[11] || "غير متوفر"} <i class="fa-solid fa-calendar-days"></i></p>
+                                </div>
+                            </div>`;
+                        }
+                    });
+
+                    document.querySelector(".ra1").innerHTML = content;
+                } catch (error) {
+                    console.error("حدث خطأ:", error);
+                }
+            }
+
+            // استدعاء الدالة عند تحميل الصفحة
+            fetchData();
+    </script>
+        
+    <script>
+        async function fetchData() {
+            const sheetID = "1tLIF30y3g89vhL1l_HpNzwvARCMZJ67Cg8x9QKLbumg";
+            const apiKey = "AIzaSyDe7E4wgMCn8aWhcc8dbcNkccGHDmoemGI";
+            const range = "SheetNews!Q2:Z100";
+
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`فشل في جلب البيانات: ${response.status}`);
+
+                const data = await response.json();
+                if (!data.values || data.values.length === 0) throw new Error("لا توجد بيانات.");
+
+                const slidesContainer = document.getElementById("slides");
+                let content = "";
+
+                data.values.forEach((row) => {
+                    const imageCode = row.slice(0, 8).join('');
+                    const captionText = row[8] || "غير متوفر";
+
+                    if (imageCode) {
+                        content += `
+                            <div class="slide">
+                                <img src="data:image/png;base64,${imageCode}" alt="صورة">
+                                <div class="caption">${captionText}</div>
+                            </div>`;
+                    }
+                });
+
+                slidesContainer.innerHTML = content;
+
+                // الآن نشغل السلايدر بعد ما الصور اتحملت
+                setupSlider();
+
+            } catch (error) {
+                console.error("حدث خطأ:", error);
+            }
+        }
+
+        function setupSlider() {
+            const slides = document.querySelectorAll(".slide");
+            const slidesContainer = document.querySelector(".slides");
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                const slideWidth = slides[0].clientWidth;
+                slidesContainer.style.transform = `translateX(-${index * slideWidth}px)`;
+            }
+
+            document.getElementById("next").addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            });
+
+            document.getElementById("prev").addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(currentIndex);
+            });
+
+            window.addEventListener("resize", () => {
+                showSlide(currentIndex); // إعادة تعيين التحريك عند تغيير الحجم
+            });
+
+            showSlide(currentIndex);
+        }
+
+        // تشغيل عند تحميل الصفحة
+        fetchData();
+    </script>
+
 </body>
 
 </html>

@@ -6,7 +6,7 @@ def split_text(text, num_parts):
     return [text[i * part_size: (i + 1) * part_size] for i in range(num_parts - 1)] + [text[(num_parts - 1) * part_size:]]
 
 # قراءة الصورة وتحويلها إلى Base64
-image_path = "4.jpg"
+image_path = "AP25112352816256-1745420022.jpg"
 output_files = ["part1.txt", "part2.txt", "part3.txt", "part4.txt", "part5.txt", "part6.txt", "part7.txt", "part8.txt"]
 
 with open(image_path, "rb") as image_file:

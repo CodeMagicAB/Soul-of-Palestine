@@ -215,81 +215,63 @@ nav {
 
 /* container */
 .container {
-    width: 90%;
-    height: auto;
+    width: 95%;
+    height:  auto;
     margin: auto;
     display: flex;
+    height: auto;
 }
-
-.hMain {
-    padding: 32px;
+h3{
+    padding: 30px;
+    text-align: center;
+    font-size: 24px;
 }
-
-.container .rightNews {
-    width: 75%;
-    height: 100%;
-
+.left{
+    margin: 40px 0;
 }
-
-.container .leftNews {
-    width: 25%;
-    height: 100%;
-
-}
-
-.news img {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.news {
-    margin-bottom: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: var(--background-color);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.news:hover {
-    transform: scale(0.9);
-    cursor: pointer;
-}
-
-.news h2 {
-    padding: 20px;
-}
-
-.news p {
-    padding: 10px 15px;
-    line-height: 1.6;
-}
-
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--background-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 9999;
-}
-
-video {
-    width: 100%;
-}
-
-.vid {
-    margin: 20px;
-    border-bottom: 1px solid var(--reverse-color);
+.left h3{
+    text-align: center;
     padding: 10px;
-    width: 100%;
+}
+.left #ullist {
+    list-style: none;
+    margin: 20px;
+    padding: 0;
 }
 
+.left #ullist li {
+    padding: 18px;
+    font-size: 18px;
+}
+
+.left #ullist li a {
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+    padding-right: 15px;
+    display: inline-block;
+    font-weight: bold;
+    transition: 0.1s linear;
+}
+
+.left #ullist li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--text-color);
+    border-radius: 2px;
+}
+
+.left #ullist li a:hover{
+    padding-right: 25px;
+}
+.timedate{
+    font-size: 12px;
+    color: var(--text-color);
+}
 /* دائرة التحميل */
 .loader {
     width: 50px;
@@ -305,11 +287,6 @@ video {
     height: 302px;
 }
 
-/* #preloader h3{
-    padding: 30px;
-    text-align: center;
-    font-family: 'Amiri', serif;
-} */
 /* تأثير الدوران */
 @keyframes spin {
     from {
@@ -320,11 +297,75 @@ video {
         transform: rotate(360deg);
     }
 }
-
-.Cover+h2 {
-    padding: 40px;
+.main{
+    width: 100%;
+    height: auto;
+    display: flex;
 }
-
+.main .right{
+    width: 75%;
+    height: auto;
+}
+.main .left {
+    width: 25%;
+    height: auto;
+}
+.contnt{
+    width: 100%;
+    display: flex;
+}
+.ra1{
+    width: 100%;
+    height: auto;
+}
+.lef1{
+    width: 100%;
+    height: auto;
+}
+.card-body img{
+    width: 100%;
+    border-radius: 12px;
+}
+.card-body{
+    width: 98%;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 9px -2px black;
+    transition: 0.2s linear;
+}
+.card-body h2{
+    padding: 10px;
+}
+.card-body p{
+    padding: 20px;
+}
+.card-body:hover{
+    border-bottom: 4px solid var(--reverse-color);
+    cursor: pointer;
+    transform: scale(0.9);
+}
+.card{
+    height: auto;
+    background-color: var(--background-color);
+    margin: 30px 0px;
+}
+.footer-column ul li input{
+    width: 85%;
+    height: 30px;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 2px;
+    outline: none;
+    border: 2px solid var(--reverse-color);
+}
+.footer-column ul li button{
+    width: 85%;
+    height: 30px;
+    background-color: var(--reverse-color);
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+}
 /* container */
 @media screen and (max-width: 768px) {
     #sidebar {
@@ -400,28 +441,30 @@ video {
     .social-links li #logoFooter {
         width: 98px;
         height: 128px;
-        margin: 1px 153px;
+        margin: 1px 135px;
     }
 
     .social-links li {
         margin: 0;
     }
+        .caption{
+            font-size: 11px;
+        }
+        .main .right {
+            width: 100%;
+            height: auto;
+        }
+    
+        .main .left {
+            width: 100%;
+            height: auto;
+        }
+        .main{
+            display: block;
+        }
+        .contnt{
+            flex-direction: column;
+        }
 
 
-    .vid {
-        width: 100%;
-        margin: auto;
-    }
-
-    .container {
-        flex-direction: column;
-    }
-
-    .container .leftNews {
-        width: 100%;
-    }
-
-    .container .rightNews {
-        width: 100%;
-    }
 }

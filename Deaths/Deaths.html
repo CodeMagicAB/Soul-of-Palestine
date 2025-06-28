@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشهداء والإصابات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="image/images-removebg-preview.png">
+</head>
+
+<body>
+    <div class="tophead"></div>
+    <header>
+        <nav>
+            <div class="itemNav">
+                <div class="logo-text">
+                    <a href="#" class="logo"><img src="image/images-removebg-preview.png" alt="Logo" id="logoimg"></a>
+                    <div class="f">
+                        <h1>فلسطين إلى الأبد</h1>
+                        <p>Palestine Forever</p>
+                    </div>
+                </div>
+                <button id="toggleDarkMode"><i class="fa-solid fa-circle-half-stroke"></i></button>
+                <button id="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="miniNav">
+                <hr style="width: 90%; margin: auto;">
+                <ul class="linkNav">
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li><a href="../index.html">الأخبار</a></li>
+                    <li><a href="../Qassam/Qassam.html">المقاومة الفلسطينية</a></li>
+                    <li><a href="../boycott/index.html">منتجات المقاطعة</a></li>
+                    <li><a href="#"  style="color: #6a6a6a;">الشهداء والضحايا</a></li>
+                    <li><a href="0">شخصيات هامة</a></li>
+                    <li><a href="../Donations/Donations.html">دعم غزة</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- القائمة الجانبية -->
+    <aside id="sidebar">
+        <button id="close-menu"><i class="fa-solid fa-times"></i></button>
+        <ul>
+            <li><a href="../index.html">الرئيسية</a></li>
+            <li><a href="../index.html">الأخبار</a></li>
+            <li><a href="../Qassam/Qassam.html">المقاومة الفلسطينية</a></li>
+            <li><a href="../boycott/index.html">منتجات المقاطعة</a></li>
+            <li><a href="#" style="color: #6a6a6a;">الشهداء والضحايا</a></li>
+            <li><a href="0">شخصيات هامة</a></li>
+            <li><a href="../Donations/Donations.html">دعم غزة</a></li>
+        </ul>
+    </aside>
+
+
+    <!-- <img src="image/1706541780500111000000000000.jpg" alt="" width="100%"> -->
+    <div class="container">
+        <h1>عدد الشهداء والإصابات خلال الحرب علي <span style="color: red;">غزة</span></h1>
+            <h4 style="text-align: center;">وَلَا تَحْسَبَنَّ الَّذِينَ قُتِلُوا فِي سَبِيلِ اللَّهِ أَمْوَاتًا ۚ بَلْ أَحْيَاءٌ عِندَ رَبِّهِمْ يُرْزَقُونَ</h4>
+        <div class="flexx">
+            <div class="count">
+                <span id="countKilled">
+                    <h2 id="countInjuries">0</h2>
+                    <p>الإصابات</p>
+                </span>
+                <span id="countKilled">
+                    <h2 id="countMartyrs" style="color: red; font-size: 70px;">0</h2>
+                    <p> الشهداء</p>
+                </span>
+                <span id="countKilled">
+                    <h2 id="countMissing">0</h2>
+                    <p>مفقودين</p>
+                </span>
+            </div>
+            <div class="minKilled">
+                <span class="mincountKilled">
+                    <h3 id="countCivilDefense">0</h3>
+                    <p>الدفاع المدني</p>
+                </span>
+                <span class="mincountKilled">
+                    <h3 id="countWomen">0</h3>
+                    <p>نساء</p>
+                </span>
+                <span class="mincountKilled">
+                    <h3 id="countMen">0</h3>
+                    <p>رجال</p>
+                </span>
+                <span class="mincountKilled">
+                    <h3 id="countChildren">0</h3>
+                    <p>اطفال</p>
+                </span>
+                <span class="mincountKilled">
+                    <h3 id="countJournalists">0</h3>
+                    <p>صحافة</p>
+                </span>
+                <span class="mincountKilled">
+                    <h3 id="countMedics">0</h3>
+                    <p>الطواقم الطبية</p>
+                </span>
+            </div>
+        </div>
+
+        <div class="list">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer -->
+    <footer class="footer" id="About" dir="ltr">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-column">
+                    <h4>Developers:</h4>
+                    <ul>
+                        <li><a href="https://api.whatsapp.com/send?phone=+201092267949&amp;text=Hello" target="_blank">
+                                3bdelrahman ramadan <i class="fa-solid fa-code"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>3bdelrahman ramadan</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/profile.php?id=100012312460534" target="_blank"><i
+                                    class="fa-brands fa-facebook"></i>
+                                Facebook</a></li>
+                        <li><a href="https://www.instagram.com/_abdel_ra7man_/" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i>
+                                Instagram</a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=+201092267949&amp;text=Hello"
+                                target="_blank"><i class="fa-brands fa-whatsapp"></i>
+                                whatsapp</a></li>
+                    </ul>
+                </div>
+                <br>
+                <div class="footer-column">
+                    <h4>3bdelrahman ramadan</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/profile.php?id=100012312460534" target="_blank"><i
+                                    class="fa-brands fa-facebook"></i>
+                                Facebook</a></li>
+                        <li><a href="https://www.instagram.com/_abdel_ra7man_/" target="_blank"><i
+                                    class="fa-brands fa-instagram"></i>
+                                Instagram</a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=+201092267949&amp;text=Hello"
+                                target="_blank"><i class="fa-brands fa-whatsapp"></i>
+                                whatsapp</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <!-- <h4>Follow <br>ZStore Eg</h4> -->
+                    <ul class="social-links">
+                        <li><img src="images-removebg-preview.png" id="logoFooter"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 فلسطين إلى الأبد | Palestine Forever.</p>
+        </div>
+    </footer>
+    <!-- footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <Script>
+        async function fetchData() {
+            const sheetID = "1tLIF30y3g89vhL1l_HpNzwvARCMZJ67Cg8x9QKLbumg";
+            const apiKey = "AIzaSyDe7E4wgMCn8aWhcc8dbcNkccGHDmoemGI";
+            const range = "SheetKill!A2:O100"; // تعديل النطاق ليطابق البيانات
+
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error(`فشل في جلب البيانات: ${response.status} - ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                if (!data.values || data.values.length === 0) {
+                    throw new Error("لم يتم العثور على بيانات في Google Sheets.");
+                }
+                let martyrsCount = 0;
+                let content = "";
+                data.values.forEach((row) => {
+                    if (row.length >= 4) { // 
+                        martyrsCount = parseInt(row[6]) || 0; // استخراج عدد الشهداء وضمان أنه رقم
+                        // التأكد من أن هناك بيانات كافية في كل صف
+                        content += `<div class="linelist">
+                        <p>مجزرة: ${row[1]}</p>
+                        <p style="color: rgba(72, 72, 72, 0.623);">${row[2]}</p>
+                        <p>عدد الشهداء: <span style="color: red;">${row[3]}</span></p>
+                        <p>${row[4]}</p>
+                    </div>`;
+                    }
+                });
+                document.querySelector(".list").innerHTML = content;
+            } catch (error) {
+                console.error("حدث خطأ:", error);
+            }
+        }
+
+        // استدعاء الدالة عند تحميل الصفحة
+
+        document.addEventListener("DOMContentLoaded", function () {
+            function animateCounter(id, targetValue, duration) {
+                let element = document.getElementById(id);
+                let startValue = 0;
+                let increment = targetValue / (duration / 10); // مقدار الزيادة التدريجية
+                let currentValue = startValue;
+
+                let interval = setInterval(() => {
+                    currentValue += increment;
+                    if (currentValue >= targetValue) {
+                        currentValue = targetValue;
+                        clearInterval(interval);
+                    }
+                    element.innerHTML = Math.floor(currentValue);
+                }, 10);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // استدعاء البيانات من Google Sheets
+            fetch('https://sheets.googleapis.com/v4/spreadsheets/1tLIF30y3g89vhL1l_HpNzwvARCMZJ67Cg8x9QKLbumg/values/SheetKill!A2:O100?key=AIzaSyDe7E4wgMCn8aWhcc8dbcNkccGHDmoemGI')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.values && data.values.length > 0) {
+                        let martyrsCount = 0;
+                        let countInjuries = 0;
+                        let countMissing = 0;
+                        let countCivilDefense = 0;
+                        let countWomen = 0;
+                        let countMen = 0;
+                        let countChildren = 0;
+                        let countJournalists = 0;
+                        let countMedics = 0;
+
+                        data.values.forEach((row) => {
+                            if (row.length >= 7) { // التأكد من وجود بيانات كافية
+                                martyrsCount = parseInt(row[6]) || 0;
+                                countInjuries = parseInt(row[7]) || 0;
+                                countMissing = parseInt(row[8]) || 0;
+                                countCivilDefense = parseInt(row[9]) || 0;
+                                countWomen = parseInt(row[10]) || 0;
+                                countMen = parseInt(row[11]) || 0;
+                                countChildren = parseInt(row[12]) || 0;
+                                countJournalists = parseInt(row[13]) || 0;
+                                countMedics = parseInt(row[14]) || 0;
+                            }
+                        });
+
+                        // استخدام القيم المستخرجة في `animateCounter`
+                        animateCounter("countInjuries", countInjuries, 2000);
+                        animateCounter("countMartyrs", martyrsCount, 2500); // عدد الشهداء من Google Sheets
+                        animateCounter("countMissing", countMissing, 2000);
+                        animateCounter("countCivilDefense", countCivilDefense, 1500);
+                        animateCounter("countWomen", countWomen, 1500);
+                        animateCounter("countMen", countMen, 1500);
+                        animateCounter("countChildren", countChildren, 1500);
+                        animateCounter("countJournalists", countJournalists, 1500);
+                        animateCounter("countMedics", countMedics, 1500);
+
+                    } else {
+                        console.error("لم يتم العثور على بيانات في Google Sheets.");
+                    }
+                })
+                .catch(error => console.error("حدث خطأ أثناء جلب البيانات:", error));
+
+        });
+        fetchData();
+
+    </Script>
+
+
+
+
+    <script>
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const closeMenu = document.getElementById("close-menu");
+            const sidebar = document.getElementById("sidebar");
+
+            menuToggle.addEventListener("click", () => {
+                sidebar.classList.add("active");
+            });
+
+            closeMenu.addEventListener("click", () => {
+                sidebar.classList.remove("active");
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const logo = document.querySelector(".logo");
+            const navLinks = document.querySelector(".linkNav");
+
+            logo.addEventListener("click", function (e) {
+                e.preventDefault(); // لمنع إعادة تحميل الصفحة
+                navLinks.classList.toggle("active"); // تبديل كلاس active لإظهار أو إخفاء القائمة
+            });
+        });
+    </script>
+
+
+    <Script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.getElementById("toggleDarkMode");
+            const body = document.body;
+            const logo = document.getElementById("logoimg");
+            const logoFooter = document.getElementById("logoFooter");
+            const loadPhoto = document.getElementById("loadPhoto");
+
+            // دالة لتغيير جميع الصور
+            function changeImages(src) {
+                if (logo) logo.src = src;
+                if (logoFooter) logoFooter.src = src;
+                if (loadPhoto) loadPhoto.src = src;
+            }
+
+            // تعيين الصور عند تحميل الصفحة
+            if (localStorage.getItem("dark-mode") === "enabled") {
+                body.classList.add("dark-mode");
+                changeImages("image/images-removebg-preview1.png");
+            } else {
+                body.classList.remove("dark-mode");
+                changeImages("image/images-removebg-preview.png");
+            }
+
+            // عند النقر على زر الوضع الليلي
+            toggleButton.addEventListener("click", () => {
+                body.classList.toggle("dark-mode");
+
+                if (body.classList.contains("dark-mode")) {
+                    changeImages("image/images-removebg-preview1.png");
+                    localStorage.setItem("image/dark-mode", "enabled");
+                } else {
+                    changeImages("image/images-removebg-preview.png");
+                    localStorage.setItem("image/dark-mode", "disabled");
+                }
+            });
+        });
+
+
+
+    </Script>
+</body>
+
+</html>

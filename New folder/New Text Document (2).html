@@ -12,14 +12,8 @@
 </head>
 
 <body >
-    <div id="preloader">
-        <img src="images-removebg-preview.png" alt="" id="loadPhoto">
-        <!-- <h3>أَلَا إِنَّ نَصْرَ اللَّهِ قَرِيبٌ</h3> -->
-    </div>
+    <div class="tophead"></div>
     <header>
-        <div class="tophead">
-            <p id="date"></p>
-        </div>
         <nav>
             <div class="itemNav">
                 <div class="logo-text">
@@ -62,49 +56,9 @@
     </aside>
 
 
-<h1 class="hMain">الواقع الفلسطيني</h1>
-<img src="../img/Cover.jpg" alt="" width="100%" style="margin: auto;" class="Cover">
-<h2>احدث الاخبار</h2>
-<div class="container">
-    <div class="rightNews"></div>
-
-    <div class="leftNews">
-        <!-- اضافة خبر -->
-        <div class="vid">
-            <video controls>
-                <source src="Video/document_5960747993563928393.mp4" type="video/mp4">
-                <source src="Video/document_5960747993563928393.mp4" type="video/ogg">
-                Your browser does not support the video tag.
-            </video>
-            <p>سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء مدينة
-                خانيونس.</p>
-        </div>
-        <div class="vid">
-            <video controls>
-                <source src="Video/document_5960747993563928393.mp4" type="video/mp4">
-                <source src="Video/document_5960747993563928393.mp4" type="video/ogg">
-                Your browser does not support the video tag.
-            </video>
-            <p>سرايا القدس تعرض مشاهد لطائرات صهيونية بدون طيار سيطرت عليها خلال تنفيذها مهام استخبارية في سماء مدينة
-                خانيونس.</p>
-        </div>
-        <!-- اضافة خبر -->
+    <div class="container">
+        
     </div>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -190,43 +144,134 @@
 
 
 
+<Script>
+    async function fetchData() {
+            const sheetID = "1tLIF30y3g89vhL1l_HpNzwvARCMZJ67Cg8x9QKLbumg";
+            const apiKey = "AIzaSyDe7E4wgMCn8aWhcc8dbcNkccGHDmoemGI";
+            const range = "SheetKill!A2:O100"; // تعديل النطاق ليطابق البيانات
 
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error(`فشل في جلب البيانات: ${response.status} - ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                if (!data.values || data.values.length === 0) {
+                    throw new Error("لم يتم العثور على بيانات في Google Sheets.");
+                }
+                let martyrsCount = 0;
+                let content = "";
+                data.values.forEach((row) => {
+                    if (row.length >= 4) { // 
+                        martyrsCount = parseInt(row[6]) || 0; // استخراج عدد الشهداء وضمان أنه رقم
+                        // التأكد من أن هناك بيانات كافية في كل صف
+                        content += `<div class="linelist">
+                        <p>مجزرة: ${row[1]}</p>
+                        <p style="color: rgba(72, 72, 72, 0.623);">${row[2]}</p>
+                        <p>عدد الشهداء: <span style="color: red;">${row[3]}</span></p>
+                        <p>${row[4]}</p>
+                    </div>`;
+                    }
+                });
+
+                document.querySelector(".list").innerHTML = content;
+            } catch (error) {
+                console.error("حدث خطأ:", error);
+            }
+        }
+
+        // استدعاء الدالة عند تحميل الصفحة
+
+        document.addEventListener("DOMContentLoaded", function () {
+            function animateCounter(id, targetValue, duration) {
+                let element = document.getElementById(id);
+                let startValue = 0;
+                let increment = targetValue / (duration / 10); // مقدار الزيادة التدريجية
+                let currentValue = startValue;
+
+                let interval = setInterval(() => {
+                    currentValue += increment;
+                    if (currentValue >= targetValue) {
+                        currentValue = targetValue;
+                        clearInterval(interval);
+                    }
+                    element.innerHTML = Math.floor(currentValue);
+                }, 10);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // استدعاء البيانات من Google Sheets
+            fetch('https://sheets.googleapis.com/v4/spreadsheets/1tLIF30y3g89vhL1l_HpNzwvARCMZJ67Cg8x9QKLbumg/values/SheetKill!A2:O100?key=AIzaSyDe7E4wgMCn8aWhcc8dbcNkccGHDmoemGI')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.values && data.values.length > 0) {
+                        let martyrsCount = 0;
+                        let countInjuries = 0;
+                        let countMissing = 0;
+                        let countCivilDefense = 0;
+                        let countWomen = 0;
+                        let countMen = 0;
+                        let countChildren = 0;
+                        let countJournalists = 0;
+                        let countMedics = 0;
+
+                        data.values.forEach((row) => {
+                            if (row.length >= 7) { // التأكد من وجود بيانات كافية
+                                martyrsCount = parseInt(row[6]) || 0;
+                                countInjuries = parseInt(row[7]) || 0;
+                                countMissing = parseInt(row[8]) || 0;
+                                countCivilDefense = parseInt(row[9]) || 0;
+                                countWomen = parseInt(row[10]) || 0;
+                                countMen = parseInt(row[11]) || 0;
+                                countChildren = parseInt(row[12]) || 0;
+                                countJournalists = parseInt(row[13]) || 0;
+                                countMedics = parseInt(row[14]) || 0;
+                            }
+                        });
+
+                        // استخدام القيم المستخرجة في `animateCounter`
+                        animateCounter("countInjuries", countInjuries, 2000);
+                        animateCounter("countMartyrs", martyrsCount, 2500); // عدد الشهداء من Google Sheets
+                        animateCounter("countMissing", countMissing, 2000);
+                        animateCounter("countCivilDefense", countCivilDefense, 1500);
+                        animateCounter("countWomen", countWomen, 1500);
+                        animateCounter("countMen", countMen, 1500);
+                        animateCounter("countChildren", countChildren, 1500);
+                        animateCounter("countJournalists", countJournalists, 1500);
+                        animateCounter("countMedics", countMedics, 1500);
+                    } else {
+                        console.error("لم يتم العثور على بيانات في Google Sheets.");
+                    }
+                })
+                .catch(error => console.error("حدث خطأ أثناء جلب البيانات:", error));
+
+        });
+        fetchData();
+
+</Script>
 
 
 
 
     <script >
-        const toggleButton = document.getElementById("toggleDarkMode");
-        const body = document.body;
-        const logo = document.getElementById("logoimg");
-        const logoFooter = document.getElementById("logoFooter");
-        const loadPhoto = document.getElementById("loadPhoto");
 
-            // التحقق مما إذا كان الوضع الليلي مفعّل مسبقًا
-            if (localStorage.getItem("dark-mode") === "enabled") {
-                body.classList.add("dark-mode");
-                logo.src = "images-removebg-preview1.png";
-                logoFooter.src = "images-removebg-preview1.png";
-                loadPhoto.src = "images-removebg-preview1.png";
-            }
-
-            // عند النقر على زر الوضع الليلي
-            toggleButton.addEventListener("click", () => {
-                body.classList.toggle("dark-mode");
-
-                // حفظ التفضيل في LocalStorage
-                if (body.classList.contains("dark-mode")) {
-                    logo.src = "images-removebg-preview1.png";
-                    logoFooter.src = "images-removebg-preview1.png";
-                    loadPhoto.src = "images-removebg-preview1.png";
-                    localStorage.setItem("dark-mode", "enabled");
-                } else {
-                    logo.src = "images-removebg-preview.png";
-                    logoFooter.src = "images-removebg-preview.png";
-                    loadPhoto.src = "images-removebg-preview.png";
-                    localStorage.setItem("dark-mode", "disabled");
-                }
-            });
 
 
             document.addEventListener("DOMContentLoaded", function () {
@@ -242,75 +287,56 @@
                         sidebar.classList.remove("active");
                     });
                 });
+        document.addEventListener("DOMContentLoaded", function () {
+                const logo = document.querySelector(".logo");
+                const navLinks = document.querySelector(".linkNav");
 
-
-
-
-
-
-
-
-
-
-    async function fetchData() {
-        const sheetID = "1tLIF30y3g89vhL1l_HpNzwvARCMZJ67Cg8x9QKLbumg";
-        const apiKey = "AIzaSyDe7E4wgMCn8aWhcc8dbcNkccGHDmoemGI";
-        const range = "SheetNews!A2:L100";
-
-        const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`;
-
-        try {
-            // console.log("طلب البيانات من:", url);
-            const response = await fetch(url);
-
-            if (!response.ok) {
-                throw new Error(`فشل في جلب البيانات: ${response.status} - ${response.statusText}`);
-            }
-
-            const data = await response.json();
-            // console.log("البيانات المستلمة:", data);
-
-            if (!data.values || data.values.length === 0) {
-                throw new Error("لم يتم العثور على بيانات في Google Sheets.");
-            }
-
-            let content = "";
-            data.values.forEach((row) => {
-                if (row.length >= 12) {
-                    content += `<div class="news">
-                    <h2>${row[1] || "غير متوفر"}</h2>
-                    <img src="data:image/png;base64,${(row[2] || '') + (row[3] || '') + (row[4] || '') + (row[5] || '') + (row[6] || '') + (row[7] || '') + (row[8] || '') + (row[9] || '')}" alt="صورة 1">
-                    <p>${row[10] || "غير متوفر"}</p>
-                    <p class="timedate" align="left">${row[11] || "غير متوفر"} <i class="fa-solid fa-calendar-days"></i></p>
-                </div>`;
-                }
+                logo.addEventListener("click", function (e) {
+                    e.preventDefault(); // لمنع إعادة تحميل الصفحة
+                    navLinks.classList.toggle("active"); // تبديل كلاس active لإظهار أو إخفاء القائمة
+                });
             });
-
-            document.querySelector(".rightNews").innerHTML = content;
-        } catch (error) {
-            console.error("حدث خطأ:", error);
-        }
-    }
-
-    // استدعاء الدالة عند تحميل الصفحة
-    fetchData();
-
-    window.addEventListener("load", () => {
-            // جعل التحميل يستمر لمدة دقيقة
-            setTimeout(() => {
-                // إخفاء شاشة التحميل
-                const preloader = document.getElementById("preloader");
-                preloader.style.opacity = "0";
-                preloader.style.transition = "opacity 0.5s ease";
-
-                // إزالة العنصر بعد انتهاء التأثير
-                setTimeout(() => {
-                    preloader.style.display = "none";
-                }, 500); // نصف ثانية
-            }, 4000); // دقيقة واحدة (60000 ملي ثانية)
-        });
-
     </script>
+
+
+<Script>
+           document.addEventListener("DOMContentLoaded", function () {
+                const toggleButton = document.getElementById("toggleDarkMode");
+                const body = document.body;
+                const logo = document.getElementById("logoimg");
+                const logoFooter = document.getElementById("logoFooter");
+                const loadPhoto = document.getElementById("loadPhoto");
+
+                // دالة لتغيير جميع الصور
+                function changeImages(src) {
+                    if (logo) logo.src = src;
+                    if (logoFooter) logoFooter.src = src;
+                    if (loadPhoto) loadPhoto.src = src;
+                }
+
+                // تعيين الصور عند تحميل الصفحة
+                if (localStorage.getItem("dark-mode") === "enabled") {
+                    body.classList.add("dark-mode");
+                    changeImages("images-removebg-preview1.png");
+                } else {
+                    body.classList.remove("dark-mode");
+                    changeImages("images-removebg-preview.png");
+                }
+
+                // عند النقر على زر الوضع الليلي
+                toggleButton.addEventListener("click", () => {
+                    body.classList.toggle("dark-mode");
+
+                    if (body.classList.contains("dark-mode")) {
+                        changeImages("images-removebg-preview1.png");
+                        localStorage.setItem("dark-mode", "enabled");
+                    } else {
+                        changeImages("images-removebg-preview.png");
+                        localStorage.setItem("dark-mode", "disabled");
+                    }
+                });
+            });
+</Script>
 </body>
 
 </html>
